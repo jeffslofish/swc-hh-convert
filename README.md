@@ -9,6 +9,6 @@ Requirements: nodejs
 
 Usage:
 
-nodejs swcWatch.js path-to-swc-hh-files > out.txt
+node swcWatch.js path-to-swc-hh-files > out.txt
 
 For inquiries, email jeffslofish@gmail.com
