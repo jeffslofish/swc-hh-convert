@@ -1,0 +1,21 @@
+{
+  "name": "swc-hh-convert",
+  "preferGlobal": true,
+  "version": "0.1.0",
+  "author": "Jeffrey Fisher <jeffslofish@gmail.com>",
+  "description": "Seals With Clubs (Bitcoin Poker) Hand History Converter to Full-Tilt Format",
+  "keywords": [
+    "seal with clubs",
+    "bitcoin",
+    "poker",
+	"hand history converter"
+  ],
+  "dependencies" : {
+    "request"   :  "*",
+	"tail"   :  "*"
+  },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffslofish/swc-hh-convert.git"
+  }
+}
