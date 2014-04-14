@@ -9,6 +9,8 @@ Requirements: nodejs
 
 Usage:
 
-node swcWatch.js path-to-swc-hh-files > out.txt
+First, run `npm install`, then
+
+`node swcWatch.js path-to-swc-hh-files > out.txt`
 
 For inquiries, email jeffslofish@gmail.com
