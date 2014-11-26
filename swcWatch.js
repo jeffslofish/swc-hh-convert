@@ -10,9 +10,15 @@ var Tail = require('tail').Tail;
 var convert = require('./swcConvert.js');
 var hhDir = process.argv[2]; 
 
+if (/^win/.test(process.platform)) {
+	var separator = "\\"
+} else {
+	var separator = "/"
+}
+
 if (!hhDir) {
 	sys.puts("You must provide the swc hand history directory as the first argument.");
-    process.exit(1);
+	process.exit(1);
 }
 
 var tail;
@@ -22,7 +28,7 @@ var tail;
 */
 var existingFiles = fs.readdirSync(hhDir);
 for (var i = 0; i < existingFiles.length; i++) {
-	tail = new Tail(hhDir + "\\" + existingFiles[i]);
+	tail = new Tail(hhDir + separator + existingFiles[i]);
 	tail.on("line", function(data) {
 		bufferTillRake(data);
 	});
@@ -34,7 +40,7 @@ for (var i = 0; i < existingFiles.length; i++) {
 */
 fs.watch(hhDir, function(event, filename) {	
 	if (filename && event == 'rename') {
-		tail = new Tail(hhDir + "\\" + filename);
+		tail = new Tail(hhDir + separator + filename);
 		tail.on("line", function(data) {
 			bufferTillRake(data);
 		});
